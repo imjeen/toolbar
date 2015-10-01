@@ -1,0 +1,30 @@
+<!-- assetCoupon -->
+<ul class="coupon-list">
+    <%_.each(assetCoupon.couponInfoList,function(couponInfoListValue){%>
+
+        <% if(couponInfoListValue.discountType === "MALL_COUPON"){%>
+            <li class="mall-coupon-item">
+                <h3 class="coupon-title">
+                    <% if(couponInfoListValue.orderAmount === 0){%>
+                        无门槛减<strong class="highlight"><%=couponInfoListValue.discountAmount%></strong>元
+                    <%}else{%>
+                        满<strong class="highlight"><%=couponInfoListValue.orderAmount%></strong>元减<strong class="highlight"><%=couponInfoListValue.discountAmount%></strong>元                           
+                    <%}%>
+                </h3>
+                <p class="coupon-limit">每个ID限领<%=couponInfoListValue.customerMaximumClaimTimes%>次&nbsp;
+                <a href="javascript:void(0);" class="j_assetTooltip" data-shop-firstShopName="<%=couponInfoListValue.firstShopName %>"
+                data-shop-firstShopUrl="<%=couponInfoListValue.firstShopUrl %>" data-shop-isUniqueShop="<%=couponInfoListValue.isUniqueShop %>" data-hasItemLimit="<%=couponInfoListValue.hasItemLimit %>"><span>(使用限制)</span></a>
+                </p>
+                <p>有效期: <%=couponInfoListValue.useTimeRange %></p>
+				<% if(couponInfoListValue.hyperlink){%>
+					<p class="text-right"><a href="<%=couponInfoListValue.hyperlink %>" target="_blank">立即使用></a></p>
+				<%}%>
+                <%if(couponInfoListValue.willExpire){%> <span class="expire-tip"><!-- 即将过期 --></span> <%}%>
+                
+                <div class="right-adorn"></div>
+
+            </li>
+        <%}%>
+        
+    <%})%>
+</ul>

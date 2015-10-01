@@ -1,0 +1,166 @@
+
+.coupon-list{
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+	li{
+		margin-top: 20px;
+		padding: 10px;
+		// background-color: #ff6d6d;
+		color: #fff;
+		position: relative;
+		overflow: visible;
+		height: 90px;
+		width:233px;
+		// 各种劵背景
+		&.mall-coupon-item{ background-color: #ff6d6d; }
+		&.newcomer-coupon-item{ background-color: #ff2040; }
+
+		a{ 
+			color: #fff;
+			text-decoration: underline;
+		}
+
+	}
+
+
+	.coupon-title{
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 26px;
+		*margin-bottom: 2px;
+		.special-char{ margin-left: -8px;}
+		.highlight{
+			font-family: "Impact";
+			font-size: 20px;
+			line-height: 27px;
+			vertical-align: top;
+			*vertical-align: middle;
+		}
+	}
+
+	.coupon-limit{ 
+		margin-bottom: 12px;
+		a{ 
+			font-size: 11px;
+			span{ padding: 5px 0;}
+		}
+	}
+
+	.text-right{
+		text-align: right;
+	}
+
+	.right-adorn{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: -3px;
+		width: 3px;
+		height: 110px;
+		background-image: url(@toolbar-sprite);
+		background-repeat: no-repeat;
+	}
+
+	// 各种劵背景的右锯齿
+	.mall-coupon-item .right-adorn{ background-position: -380px 0; }
+	.newcomer-coupon-item .right-adorn{ background-position: -390px 0; }
+
+	.expire-tip{
+		position: absolute;
+		top: 0;
+		right: 15px;
+		background-image: url(@toolbar-sprite);
+		background-repeat: no-repeat;
+		background-position: -330px -150px;
+		width: 46px;
+		height: 46px;
+	}
+	
+	.tooltip{
+		display: none;
+		background: #4F3636;
+		background-color: rgba(0,0,0,.7);
+		font-size: 11px;
+		line-height: 16px;
+		// 
+		// background: #000;
+		// filter: alpha(opacity=40);
+  		// opacity: 0.4;
+		
+		
+		color: #fff;
+		width: 160px;
+		// height: 60px;
+		position: absolute;
+		z-index: 2;
+		top: 60px;
+		left: 40px;
+		margin-left: -60px;
+		margin-top: 20px;
+		a{ color: #5cbcff; }
+		&:after{
+			content: ' ';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -5px;
+			margin-top: -5px;
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 5px solid #4F3636;
+			border-bottom-color: rgba(0,0,0,0.7);  /*支持rgba的浏览器*/
+			// filter:Alpha(opacity=80); 
+		}
+		.tooltip-inner{
+			padding: 5px 10px;
+		}
+	}
+	
+
+}
+
+// 正对活动
+.activity-list{
+
+	.coupon-use{
+		position: absolute;
+		top: 0;
+		right: -4px;
+		bottom: 0;
+		width: 20px;
+		padding: 22px 12px;
+
+		background-image: url(@toolbar-sprite);
+		background-repeat: no-repeat;
+		background-position: -280px 0px;
+
+		font-size: 14px;
+		line-height: 16px;
+		text-align: center;
+		text-decoration: none;
+
+		&.disabled{
+			background-position: -330px 0;
+			cursor: default;
+		}
+		
+	}
+
+}
+
+.coupon-more{
+	padding-top: 10px;
+	padding-bottom: 20px;
+	text-align: center;
+	a.disabled,a.disabled:hover{
+		color: #666;
+		pointer-events: none;
+	}
+}
+
+
+

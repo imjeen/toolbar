@@ -1,0 +1,113 @@
+<% if( !cart || (cart.userCartInfo.length === 0) ){%>
+
+<div class="toolbar-empty">
+    <div class="toolbar-mascot"></div>
+    <p class="empty-tip">哎哟，来都来了。不买点什么吗？</p>
+    <p><a class="toolbar-empty-btn" href="/" >立即去买</a></p>
+</div>
+
+<% }else{ %>
+<!-- cart -->
+<div class="cart-section scroll-section">
+    <div class="title-field line-field"><a class="r-txt blue-txt" href="/order/cart/get_cart">全屏查看</a></div>
+    
+    <% _.each(cart.userCartInfo,function(userCartInfoValue,userCartInfoKey){ %> 
+    <dl class="cart-dl" id="<%=userCartInfoValue.shopId %>" >
+        <dt><%=userCartInfoValue.shopName %></dt>
+        <% _.each(userCartInfoValue.cartItems,function(cartItemsValue,cartItemsKey){ %> 
+            <% if(cartItemsValue.status !== 1 && cartItemsValue.isBundleItem ===false){  %> 
+            <!-- 下架产品 -->
+            <dd class="unshelve"  data-item-id="<%=cartItemsValue.shoppingCartItemId %>" data-product-count="<%=cartItemsValue.productCount%>">
+                   
+                    <div class="figure">
+                     <a href="/item/<%=cartItemsValue.id%>">
+                        <img src="<%=cart.imageUrl%><%=cartItemsValue.imagePath %>" alt="" width="50" height="50">
+                        <div><i class="img-layer"></i><span class="img-txt"></span></div>
+                    </a>
+                    </div>
+					
+                    <div class="">
+						<p class="tow-line">
+                            <a href="/item/<%=cartItemsValue.id%>" title="<%=cartItemsValue.name %>" ><%=cartItemsValue.name %></a>
+                        </p>
+						
+                        <p class=""><span class="price-attr"><i>¥</i><%=parseFloat(cartItemsValue.priceTg).toFixed(2) %></span> <span>x&nbsp;<%=cartItemsValue.productCount%></span></p>
+                    </div>    
+                <span class="item-action j_deleteCartItem">x</span>
+            </dd>
+            <%}else if(cartItemsValue.isBundleItem){%>
+
+                <% if(cartItemsValue.isInvalid){%>
+                    <!-- 未失效 和 搭配促销 -->
+                    <dd data-item-id="<%=cartItemsValue.shoppingCartItemId %>" data-product-count="<%=cartItemsValue.productCount%>"> 
+                        
+                        <div class="figure">
+                            <a href="/item/<%=cartItemsValue.id%>">
+                                <img src="<%=cart.imageUrl%><%=cartItemsValue.imagePath %>" alt="" width="50" height="50">
+                            </a>
+                        </div>
+                      
+                        <div class="">
+                            <p class="tow-line">
+                                <a href="/item/<%=cartItemsValue.id%>" title="<%=cartItemsValue.name %>"><%=cartItemsValue.name %></a>
+                            </p>
+                            
+                            <p class=""><span class="price-attr"><i>¥</i><%=parseFloat(cartItemsValue.priceTg).toFixed(2) %></span>&nbsp;&nbsp;<span>x&nbsp;<%=cartItemsValue.productCount%></span>&nbsp;<em class="extra-note">搭配促销</em></p>
+                        </div>
+                    <!-- <span class="item-action j_deleteCartItem" >x</span> -->
+                    </dd>
+
+                <%}else{%>
+                    <!-- 已失效 -->
+                    <dd class="promotion"  data-item-id="<%=cartItemsValue.shoppingCartItemId %>" data-product-count="<%=cartItemsValue.productCount%>"> 
+                            
+                            <div class="figure">
+                                <a href="/item/<%=cartItemsValue.id%>">
+                                    <img src="<%=cart.imageUrl%><%=cartItemsValue.imagePath %>" alt="" width="50" height="50">
+                                    <div><i class="img-layer"></i><span class="img-txt"></span></div>
+                                </a>
+                            </div>
+                            
+                            <div class="">
+                                <p class="tow-line">
+                                    <a href="/item/<%=cartItemsValue.id%>" title="<%=cartItemsValue.name %>" > <%=cartItemsValue.name %></a>
+                                </p>
+                                <p class=""><span class="price-attr"><i>¥</i><%=parseFloat(cartItemsValue.priceTg).toFixed(2) %></span>&nbsp;&nbsp;<span>x&nbsp;<%=cartItemsValue.productCount%></span>&nbsp;<em class="extra-note">搭配促销</em></p>
+                            </div>
+                        <!-- <span class="item-action j_deleteCartItem" >x</span> -->
+                    </dd>
+
+                <%}%>
+            
+
+            <% }else{%>
+            <dd data-item-id="<%=cartItemsValue.shoppingCartItemId %>" data-product-count="<%=cartItemsValue.productCount%>"> 
+                    
+                    <div class="figure">
+                        <a href="/item/<%=cartItemsValue.id%>">
+                            <img src="<%=cart.imageUrl%><%=cartItemsValue.imagePath %>" alt="" width="50" height="50">
+                        </a>
+                    </div>
+                    
+					<div class="">
+						<p class="tow-line">
+                            <a href="/item/<%=cartItemsValue.id%>" title="<%=cartItemsValue.name %>"><%=cartItemsValue.name %></a>
+                        </p>
+                        <p class=""><span class="price-attr"><i>¥</i><%=parseFloat(cartItemsValue.priceTg).toFixed(2) %></span>&nbsp;&nbsp;<span>x&nbsp;<%=cartItemsValue.productCount%></span></p>
+                    </div>
+                <span class="item-action j_deleteCartItem" >x</span>
+            </dd>
+            <%} %>
+        <%})%>
+    </dl>
+    <% }) %>
+
+</div>
+
+<div class="bottom-section">
+    <div class="btn-group group-half">
+        <a class="tool-btn bg-btn btn-block" href="/order/cart/get_cart">去购物车结算</a>
+    </div>
+</div>
+
+<%}%>

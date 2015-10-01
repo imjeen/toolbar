@@ -1,0 +1,164 @@
+// main content
+.toolbar-box{
+	height: 100%;
+	position: relative;
+	.scroll-section{
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	.ellipsis{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	// 两行文本显示，超出就截断
+	.tow-line{
+		overflow: hidden;
+		height: 36px;
+	}
+
+	.tool-btn{
+		display: inline-block;
+		padding: 7px 10px;
+		font-size: 14px;
+		line-height: 20px;
+		border: 1px solid #dd0000;
+		border-radius: 3px;
+		text-align: center;
+
+		&.border-btn{
+			background-color: #fff;
+			color: #dd0000;
+			&:hover{
+				color: #ff6666;
+				border-color: #ff6666;
+				background-color: #ffe8e8;
+			}
+		}
+		
+		&.bg-btn{
+			background-color: #dd0000;
+			color: #fff;
+
+		}
+
+		&.disabled{ 
+			pointer-events: none;
+			border-color: #BFBFBF;
+			background-color: #BFBFBF;
+			color: #fff;
+		}
+		
+	}
+
+	.line-field{
+		overflow: hidden;
+		.r-txt{ float: right;}
+	}
+
+	.title-field{padding: 5px 10px;}
+
+	.bottom-section{
+		padding: 10px;
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		// background-color: #fff;
+		
+		.prite-tag{
+			font-size: 14px;
+			color: #F30;
+			font-family: Arial;
+			font-weight: bold;
+			i{ 
+				font-weight: bold;
+				font-size: 12px; 
+			}
+		}
+		
+		.red-txt{ color: #ff3300; }
+
+		.btn-group{
+			overflow: hidden;
+			margin-top: 10px;
+			.btn-block{display: block; }
+		}
+
+	}
+	
+
+
+}
+
+// empty
+.toolbar-empty{
+	margin-top: 83px;
+	margin-bottom: 10px;
+	text-align: center;
+	.toolbar-mascot{
+		display: inline-block;
+		width: 116px;
+		height: 145px;
+		background-image: url(@toolbar-sprite);
+		background-repeat: no-repeat;
+		background-position: -150px 0;
+	}
+	.empty-tip{ 
+		margin: 10px 0 20px;
+		font-weight: bold;
+	}
+	.toolbar-empty-btn{
+		width: 100px;
+		display: inline-block;
+		padding: 7px 9px;
+		font-size: 14px;
+		line-height: 20px;
+		border: 1px solid #D00;
+		border-radius: 3px;
+		background-color: #D00;
+  		color: #FFF;
+		text-align: center;
+	}
+	.toolbar-border-btn{
+		border: 1px solid #D00;
+		background-color: #fff;
+		color: #D00;
+		&:hover{
+			color: #ff6666;
+			border-color: #ff6666;
+			background-color: #ffe8e8;
+		}
+	} 
+}
+
+// mask
+.toolbar-mask{
+	// display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	background-color: rgba(225, 225, 225, 0.5);
+	text-align: center;
+	.mask-tip{
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		margin-left: -50px;
+		padding-top: 50px;
+		width: 100px;
+		background-image: url(@loading-gif);
+		background-repeat: no-repeat;
+		background-position: top center;
+	}
+
+}
+
+.inner-box .toolbar-mask{ top: 42px;}
+
+// 我看过的
+// 用户反馈

@@ -1,0 +1,75 @@
+<!-- 足迹 record -->
+<h3 class="record-title"><span class="record-title-icon"></span>&nbsp;我的足迹</h3>
+<!-- 为空处理 -->
+<% if( !record || record.rightBarItemTrackingList.length === 0){ %>
+<div class="toolbar-empty">
+    <div class="toolbar-mascot"></div>
+    <p class="empty-tip">还没有浏览历史哦~</p>
+    <p><a class="toolbar-empty-btn toolbar-border-btn" href="/list">去商城看看</a></p>
+</div>
+<%}else{%>
+<!-- 登录标识 -->
+<input id="needLogin" type="hidden" value="<%=record.needLogin%>" />
+<!-- 商品 -->
+<div class="record-section scroll-section">
+    <p class="record-extra"><span>我浏览过的<%=record.count%>件商品</span><a class="r-txt j_recordClean" href="javascript:void(0);">清空</a></p>
+    <ul class="record-list">
+        <% _.each(record.rightBarItemTrackingList,function(recordItemValue,recordItemIndex){%>
+            <!-- 显示前8个 -->
+            <%if(recordItemIndex >= 8){ return ;}%>
+
+                <%if( recordItemValue.status !== 1 ){%>
+                <!-- 下架产品 -->
+                <li class="unshelve" 
+                    data-item-id="<%=recordItemValue.itemId %>"
+                    data-item-tracking-time="<%=recordItemValue.trackingTime %>">
+                    
+					<div class="figure">
+                        <a href="/item/<%=recordItemValue.itemId%>">
+                            <img src="<%=record.imgServerUrl %><%=recordItemValue.imageUrl %>" alt="" width="78" height="82">
+                        </a>
+                    </div>
+                   
+                    <p class="price-attr"><i>¥</i><%=parseFloat(recordItemValue.price).toFixed(2) %></p>
+
+                     <div><i class="img-layer"></i><span class="img-txt"></span></div>
+                    
+                </li>
+                <%}else{%>
+                <li data-item-id="<%=recordItemValue.itemId %>" 
+                    data-shop-id="<%=recordItemValue.shopId %>"  
+                    data-item-price="<%=recordItemValue.price %>" 
+                    data-item-isSeckilling="<%=recordItemValue.isSeckilling %>" 
+                    data-item-promotionId="<%=recordItemValue.promotionId %>" 
+					data-item-inventory="<%=recordItemValue.inventory %>"
+					data-item-maxPurchaseCount="<%=recordItemValue.maxPurchaseCount %>" 
+                    data-item-isSpecialShop="<%=recordItemValue.isSpecialShop %>" 
+					data-item-promotionInventory="<%=recordItemValue.promotionInventory %>" 
+                    data-item-tracking-time="<%=recordItemValue.trackingTime %>">
+                    
+					<div class="figure">
+                        <a href="/item/<%=recordItemValue.itemId%>">
+                            <img src="<%=record.imgServerUrl %><%=recordItemValue.imageUrl %>" alt="" width="78" height="82">
+                        </a>
+                    </div>
+
+                    <!-- isVoucher=true 时表示代金券 -->
+                    <% if(recordItemValue.isVoucher === false && recordItemValue.itemType !== 3){%>
+                    <p class="voucher-atrr"><a class="record-btn j_addToCart" href="#">加入购物车</a></p>
+                    <%}%>
+
+                    <p class="price-attr"><i>¥</i><%=parseFloat(recordItemValue.price).toFixed(2) %></p>
+                    
+                </li>
+                <%}%>
+
+        <%})%>
+
+    </ul>
+
+    <% if(record.count > 8){%>
+    <p class="more-info"><a href="/collect/item_list.htm">查看更多足迹商品 > </a></p>
+    <%}%>
+</div>
+<%}%>
+

@@ -1,0 +1,78 @@
+<% if( !activity || (activity.couponInfoList.length === 0) ){%>
+
+<div class="toolbar-empty">
+    <div class="toolbar-mascot"></div>
+    <p class="empty-tip">当前没可领的优惠券！</p>
+</div>
+<% }else{ %>
+
+<!-- activity -->
+<div class="asset-section scroll-section">
+    <ul class="coupon-list activity-list">
+        <%_.each(activity.couponInfoList,function(couponInfoListValue){%>
+
+            <% if(couponInfoListValue.discountType === "MALL_COUPON"){%>
+               <!--for mall coupon -->
+
+                <% if(couponInfoListValue.isNewComerCoupon === true){%>
+                <!-- 新人券-->
+                <li class="newcomer-coupon-item" data-promotion-id="<%=couponInfoListValue.promotionId %>">
+                    <h3 class="coupon-title"><span class="special-char">【新人券】</span>
+                        <% if(couponInfoListValue.orderAmount === 0){%>无门槛减<strong class="highlight"><%=couponInfoListValue.discountAmount%></strong>元
+                        <%}else{%>满<strong class="highlight"><%=couponInfoListValue.orderAmount%></strong>元减<strong class="highlight"><%=couponInfoListValue.discountAmount%></strong>元                       
+                        <%}%>
+                    </h3>
+                    <p class="coupon-limit">每个ID限领<%=couponInfoListValue.customerMaximumClaimTimes%>次&nbsp;
+                    <a href="javascript:void(0)" class="j_activityTooltip" data-shop-firstShopName="<%=couponInfoListValue.firstShopName %>" data-platformRestrict="<%=couponInfoListValue.platformRestrict %>"  
+                    data-shop-firstShopUrl="<%=couponInfoListValue.firstShopUrl %>" data-shop-isUniqueShop="<%=couponInfoListValue.isUniqueShop %>" data-hasItemLimit="<%=couponInfoListValue.hasItemLimit %>"><span>(使用限制)</span></a></p>
+                    <p>有效期：<%=couponInfoListValue.useTimeRange %></p>
+                    <p><a href="<%=couponInfoListValue.hyperlink %>" target="_blank">立即使用></a></p>
+
+                    <div class="right-adorn"></div>
+
+                    <%if(couponInfoListValue.customerClaimTimes === couponInfoListValue.customerMaximumClaimTimes){%>
+                        <a class="coupon-use j_couponObtain disabled" href="javascript:void(0);"><span>已领<%=couponInfoListValue.customerMaximumClaimTimes%>次</span></a>
+                    <%}else{%>
+                        <a class="coupon-use j_couponObtain" href="javascript:void(0);"><span>立即领取</span></a>
+                    <%}%>
+                </li>
+                <% }else{ %>
+                <li class="mall-coupon-item" data-promotion-id="<%=couponInfoListValue.promotionId %>">
+                    <h3 class="coupon-title">
+                        <% if(couponInfoListValue.orderAmount === 0){%>
+                            无门槛减<strong class="highlight"><%=couponInfoListValue.discountAmount%></strong>元
+                        <%}else{%>
+                            满<strong class="highlight"><%=couponInfoListValue.orderAmount%></strong>元减<strong class="highlight"><%=couponInfoListValue.discountAmount%></strong>元                       
+                        <%}%>
+                    </h3>
+                    <p class="coupon-limit">每个ID限领<%=couponInfoListValue.customerMaximumClaimTimes%>次&nbsp;
+                    <a href="javascript:void(0)" class="j_activityTooltip" data-shop-firstShopName="<%=couponInfoListValue.firstShopName %>" data-platformRestrict="<%=couponInfoListValue.platformRestrict %>"  
+                    data-shop-firstShopUrl="<%=couponInfoListValue.firstShopUrl %>" data-shop-isUniqueShop="<%=couponInfoListValue.isUniqueShop %>" data-hasItemLimit="<%=couponInfoListValue.hasItemLimit %>"><span>(使用限制)</span></a></p>
+                    <p>有效期：<%=couponInfoListValue.useTimeRange %></p>
+                    <p><a href="<%=couponInfoListValue.hyperlink %>" target="_blank">立即使用></a></p>
+
+                    <div class="right-adorn"></div>
+
+                     <%if(couponInfoListValue.customerClaimTimes === couponInfoListValue.customerMaximumClaimTimes){%>
+                            <a class="coupon-use j_couponObtain disabled" href="javascript:void(0);"><span>已领<%=couponInfoListValue.customerMaximumClaimTimes%>次</span></a>
+                    <%}else{%>
+                        <a class="coupon-use j_couponObtain" href="javascript:void(0);"><span>立即领取</span></a>
+                    <%}%>
+
+                </li>
+                 <%}%>
+
+            <%}%>
+            
+        <%})%>
+        
+    </ul>
+    
+    <%if(activity.currentPage < activity.totalPage){%>
+        <p class="coupon-more"><a class="j_couponMore" href="javascript:void(0);" data-total-page="<%=activity.totalPage%>" data-current-page="<%=activity.currentPage%>">查看更多</a></p>
+    <%}%>
+
+</div>
+
+
+<%}%>

@@ -1,0 +1,8 @@
+
+# front-end
+/public/dist
+/public/dev
+*.map
+/node_modules
+/public/js/bower_components
+

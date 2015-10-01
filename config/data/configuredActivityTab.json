@@ -1,0 +1,8 @@
+{
+    "isShow": true,
+    "couponEntryImage": "toolbar_activity.gif",
+    "isCoupon": true,
+    "advertiseImage": "test.jpg",
+    "advertiseLink": "/",
+    "imageBaseUrl": "/images/"
+}

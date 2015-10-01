@@ -1,0 +1,33 @@
+{
+	"imgServerUrl": "/images/",
+	"rightBarFavoriteShopViewList": [{
+		"imageUrl": "50x50.png",
+		"name": "测试# 店铺名称",
+		"shopId": 815
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试# 晶晶店铺",
+		"shopId": 1614
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试# 店铺测试",
+		"shopId": 244
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "专营店",
+		"shopId": 2688
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试# 001店铺名称专营店",
+		"shopId": 144
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试# 001店铺名称专营店",
+		"shopId": 144
+	}]
+}

@@ -1,0 +1,118 @@
+
+// 我的收藏
+.favorite-section{
+	.tab-bar{
+		background-color: #fff;
+		.tab-title{
+			float: left;
+			text-align: center;
+			padding: 10px 0;
+			width: 50%;
+			font-size: 16px;
+			line-height: 20px;
+			cursor: pointer;
+			color: #333;
+			&.active{
+				color: #dd0000;
+				border-bottom: 2px solid #dd0000;
+			}
+		}
+	}
+
+	.more-info{
+		margin-top: 30px;
+		margin-bottom: 10px;
+		text-align: center;
+		a{
+			color: #999999;
+			&:hover{ color: #d00; }
+		}
+	}
+
+	.favorite-list{
+		overflow: hidden;
+
+		.tool-btn{
+			padding: 2px 10px;
+			font-size: 12px;
+		}
+
+		li{
+			background-color: #fff;
+			margin-top: 20px;
+			position: relative;
+			padding: 10px;
+			overflow: hidden;
+			&:hover {
+				background-color: #f8f8f8;
+				.item-delete{ display: block;}
+			}
+			
+			.item-delete{
+				display: none;
+				position: absolute;
+				top: 0;
+				right: 0;
+				font-size: 12px;
+				line-height: 12px;
+				background-color: #C2C2C2;
+				width: 15px;
+				height: 15px;
+				text-align: center;
+				border-radius: 50%;
+				color: #FFF;
+				cursor: pointer;
+			}
+		}
+		.figure{
+			width: 50px;
+			height: 50px;
+			float: left;
+			margin-right: 10px;
+			margin-top: 2px;
+		}
+		.item-main{
+			max-width: 195px;
+			float: left;
+		}
+		.title-attr{ 
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+		.price-attr{ 
+			margin: 3px 0;
+			font-size: 14px;
+			font-weight: bold;
+			color: #F30;
+			font-family: Arial;
+			i{
+				font-weight: bold;
+				font-size: 12px;
+			}
+		}
+
+		.unshelve{
+			color: #cccccc;
+			.price-attr{ color: #cccccc; }
+			// mask item
+			.figure{
+				position: relative;
+				.img-layer,
+				.img-txt{
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background-image: url(@toolbar-sprite);
+					background-repeat: no-repeat;
+				}
+				.img-layer{ background-position: -150px -150px; }
+			}
+		}
+
+		.unshelve .img-txt{   background-position: -150px -300px; }
+	}
+
+}
+

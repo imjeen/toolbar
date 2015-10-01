@@ -1,0 +1,16 @@
+{
+  "name": "aside-toolbar",
+  "version": "1.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "./public/js/bower_components"
+  ],
+  "dependencies": {
+    "underscore": "~1.8.3"
+  }
+}

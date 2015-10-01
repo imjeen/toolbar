@@ -1,0 +1,44 @@
+<% if(order.orderList.length === 0){%>
+<div class="toolbar-empty">
+    <div class="toolbar-mascot"></div>
+    <p class="empty-tip">您没有未付款的订单哦~</p>
+</div>
+
+<%}else{%>
+
+<!-- order -->
+<div class="order-section scroll-section">
+
+    <div class="title-field line-field"><label><input type="checkbox" class="j_allInput" >&nbsp;全选</label> <a class="r-txt blue-txt" href="/order/order_list.htm">查看订单列表</a></div>
+
+    <% _.each(order.orderList,function(orderListValue){%>
+        <dl class="order-dl">
+            <dt><label class="blue-txt"><input type="checkbox" class="j_selectInput" data-price="<%= parseFloat(orderListValue.totalAmount).toFixed(2)%>" data-order-number="<%=orderListValue.id%>" ></label> <a class="r-txt blue-txt" href="/order/order/order_group_info_index?orderId=<%=orderListValue.id %>">&nbsp;订单号&nbsp;<span class="order-number"><%=orderListValue.orderGroupId%></span></a></dt>
+            <dd>
+                <h5 class="order-dl-title ellipsis" title="<%=orderListValue.shopName%>"><%=orderListValue.shopName%></h5>       
+				<% if(orderListValue.imgUrlList.length !== 0){%>
+				<ul class="order-img-list">
+                    <% _.each(orderListValue.imgUrlList,function(itemImageUrl){%>
+                    <li><img src="<%=order.imgServerUrl %><%=itemImageUrl %>" alt=""></li>
+                   <!-- <li><a href="#"><img src="./images/<%=itemImageUrl %>" alt=""></a></li> -->
+					<%})%>
+                </ul>
+				<%}%>
+                <div class="line-field">
+                    <span>商品总额：<em class="price-attr"><i>¥</i><%= parseFloat(orderListValue.totalAmount).toFixed(2)%></em></span>
+                    <span class="gray-txt r-txt">共<em><%=orderListValue.itemCount%></em>个商品</span>
+                </div>
+            </dd>
+        </dl>
+    <%})%>
+</div>
+
+<div class="bottom-section">
+    <div class="line-field j_orderCount">
+        <span>已选择<em class="order-count red-txt">0</em>笔订单</span>
+        <span class="r-txt">共付款：<strong class="prite-tag"><i>¥</i><span class="order-total">0.00</span></strong></span>
+    </div>
+    <p class="btn-group"><a id="orderButton" class="tool-btn bg-btn btn-block" href="javascript:void(0);">去结算</a></p>
+</div>
+
+<%}%>

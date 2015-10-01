@@ -1,0 +1,59 @@
+
+.order-section{
+	.blue-txt{ color: #007fd7; }
+	.gray-txt{ color: #999999;}
+	.price-attr{
+		font-family: Arial;
+		font-size: 14px;
+		font-weight: bold;
+		color: #ff3300;
+
+		i{ 
+			font-weight: bold;
+			font-size: 12px; 
+		}
+
+	}
+	.order-dl{
+		background-color: #fff;
+		margin-bottom: 10px;
+		 padding: 10px 5px;
+
+		&:hover,
+		&.dl-selected{
+			background-color: #fff5f4;
+		}
+		dt{ 
+			padding-left: 5px;
+			&:after{
+				content: '';
+				display: block;
+				height: 0;
+				margin-top: 10px;
+				margin-bottom: 5px;
+				border-bottom: 1px solid #eceaea;
+				margin-left: 15px;
+			} 
+		}
+		dd{
+			padding-left: 20px;
+		}
+	}
+	
+	.order-number{ font-family: Arial; }
+	
+	.order-dl-title{ 
+		font-weight: bold; 
+		margin: 8px 0;
+	}
+	.order-img-list{
+		height: 72px;
+		overflow: hidden;
+  		margin-right: -16px;
+  		margin-bottom: 8px;
+		li{
+			float: left;
+			margin-right: 15px;
+		}
+	}
+}

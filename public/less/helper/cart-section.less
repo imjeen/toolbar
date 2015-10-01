@@ -1,0 +1,99 @@
+
+.cart-section{
+	font-family: 'microSoft yaHei';
+	.cart-dl{
+		background-color: #fff;
+		margin-bottom: 20px;
+		padding-top: 10px;
+		dt{
+			padding: 0 10px;
+			&:after{
+				content: '';
+				display: block;
+				height: 0;
+				margin-top: 10px;
+				// margin-bottom: 5px;
+				border-bottom: 1px solid #eceaea;
+			}
+		}
+		dd{
+			padding: 10px 10px 5px;
+			position: relative;
+			overflow: hidden;
+			.item-action{
+				display: none;
+				position: absolute;
+				top: 0;
+				right: 0;
+				font-size: 12px;
+				line-height: 12px;
+				background-color: #C2C2C2;
+				width: 15px;
+				height: 15px;
+				text-align: center;
+				border-radius: 50%;
+				color: #FFF;
+				cursor: pointer;
+			}
+			&:hover{
+				background-color: #f8f8f8;
+				.item-action{ display: block;}
+			}
+		}
+
+		.figure{
+			margin-top: 2px;
+			width: 50px;
+			height: 50px;
+			overflow: hidden;
+			float: left;
+			margin-right: 10px;
+		}
+
+		.price-attr{
+			font-size: 14px;
+			color: #ff3300;
+			font-family: Arial;
+			font-weight: bold;
+			i{
+				font-weight: bold;
+				font-size: 12px;
+			}
+		}
+
+		.extra-note{ 
+			float: right;
+			margin-right: 20px;
+			color: #F30; 
+		}
+		
+		.promotion,
+		.unshelve{
+			color: #cccccc;
+			a{color: #cccccc;}
+			.price-attr{ color: #cccccc; }
+
+			// mask item
+			.figure{
+				position: relative;
+				.img-layer,
+				.img-txt{
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background-image: url(@toolbar-sprite);
+					background-repeat: no-repeat;
+				}
+				.img-layer{ background-position: -150px -150px; }
+			}
+
+		}
+
+		.unshelve .img-txt{   background-position: -150px -300px; }
+		.promotion .img-txt{  background-position: -200px -300px; }
+
+
+	}
+}

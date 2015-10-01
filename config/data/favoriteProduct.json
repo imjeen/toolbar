@@ -1,0 +1,73 @@
+{
+	"imgServerUrl": "/images/",
+	"rightBarFavoriteItemViewList": [{
+		"imageUrl": "50x50.png",
+		"name": "测试商品名称：浏览器引擎 浏览器引擎负责让 UI 和渲染引擎协调工作",
+		"status": 1,
+		"itemId": 64769,
+		"price": 2.00,
+		"shopId": 144,
+		"inventory": 24,
+		"isVoucher": false
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试商品 - 渲染引擎 渲染引擎负责展示请求内容。如果请求的内容是 HTML，渲染引擎会解析 HTML 和 CSS，然后将内容展示在屏幕上",
+		"status": 2,
+		"itemId": 65059,
+		"price": 10.00,
+		"shopId": 815,
+		"inventory": 9703,
+		"isVoucher": false
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试商品名称：浏览器引擎 浏览器引擎负责让 UI 和渲染引擎协调工作",
+		"status": 2,
+		"itemId": 65083,
+		"price": 1.00,
+		"shopId": 144,
+		"inventory": 1,
+		"isVoucher": true
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试商品名称：浏览器引擎 浏览器引擎负责让 UI 和渲染引擎协调工作",
+		"status": 2,
+		"itemId": 65262,
+		"price": 1111.00,
+		"shopId": 2065,
+		"inventory": 220,
+		"isVoucher": false
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "某某自营 测试商品名称：浏览器引擎 浏览器引擎负责让 UI 和渲染引擎协调工作",
+		"status": 1,
+		"itemId": 65343,
+		"price": 12.00,
+		"shopId": 1614,
+		"inventory": 1000,
+		"isVoucher": false
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "促销 测试商品名称：浏览器引擎 浏览器引擎负责让 UI 和渲染引擎协调工作",
+		"status": 1,
+		"itemId": 65368,
+		"price": 4888.90,
+		"shopId": 7025,
+		"inventory": 997,
+		"isVoucher": false
+	},
+	{
+		"imageUrl": "50x50.png",
+		"name": "测试测试普通商品 测试商品名称：浏览器引擎 浏览器引擎负责让 UI 和渲染引擎协调工作",
+		"status": 1,
+		"itemId": 66702,
+		"price": 8.00,
+		"shopId": 815,
+		"inventory": 87,
+		"isVoucher": false
+	}]
+}

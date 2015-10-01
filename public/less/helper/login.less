@@ -1,0 +1,72 @@
+// 
+// 引用原有的公用登录弹框
+// 
+
+.fast_login_new {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999999999999;
+    display: none;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: 0 none;
+    margin: 0;
+    overflow: visible;
+}
+#popupLogin {
+    position: absolute;
+    z-index: 100000000000;
+    width: 490px;
+    height: 495px;
+    background: #FFF;
+}
+
+.fast_login {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999999999999;
+    display: none;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: 0 none;
+    margin: 0;
+    overflow: visible;
+}
+#popupLoginMask{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99999999999;
+    background: #000;
+    filter: alpha(opacity=40);
+    opacity: .4
+}
+#popupLogin {
+    position: absolute;
+    z-index: 100000000000;
+    width: 490px;
+    height: 495px;
+    background: #fff
+}
+#popupLogin .close {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(/images/short-close.png) center center no-repeat;
+    background-color: #3f3f3f;
+    background-color: rgba(0, 0, 0, .5);
+    cursor: pointer
+}
+#popupLogin .close:hover {
+    background-color: #7c7c7c;
+    background-color: rgba(0, 0, 0, .3)
+}

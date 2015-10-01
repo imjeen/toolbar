@@ -1,0 +1,79 @@
+<!-- favoriteProduct -->
+<!-- 为空处理 -->
+<% if( !favoriteProduct || (favoriteProduct.rightBarFavoriteItemViewList).length === 0){ %>
+<div class="toolbar-empty">
+    <div class="toolbar-mascot"></div>
+    <p class="empty-tip">您的收藏夹还没有收藏商品哟！</p>
+</div>
+<%}else{%>
+<!-- 商品 -->
+<div class="favorite-content scroll-section">
+    <ul class="favorite-list">
+        <% _.each(favoriteProduct.rightBarFavoriteItemViewList,function(FavoriteItemValue,FavoriteItemIndex){%>
+            <!-- 显示前5个 -->
+            <%if(FavoriteItemIndex >= 5){ return ;}%>
+
+                <%if( FavoriteItemValue.status !== 1 ){%>
+                <!-- 下架产品 -->
+                <li class="unshelve" data-item-id="<%=FavoriteItemValue.itemId %>" >
+                    
+					<div class="figure">
+                        <a href="/item/<%=FavoriteItemValue.itemId%>">
+                            <img src="<%=favoriteProduct.imgServerUrl %><%=FavoriteItemValue.imageUrl %>" alt="">
+                            <div><i class="img-layer"></i><span class="img-txt"></span></div>
+                        </a>
+                    </div>
+					
+                    <div class="item-main">
+                        
+						<p class="tow-line" >
+                            <a href="/item/<%=FavoriteItemValue.itemId%>" title="<%=FavoriteItemValue.name %>"><%=FavoriteItemValue.name %></a>
+                        </p>
+						
+                        <p class="price-attr"><i>¥</i><%=parseFloat(FavoriteItemValue.price).toFixed(2) %></p>
+                        <!-- <p><a class="tool-btn border-btn" href="#">加入购物车</a></p> -->
+                    </div>
+                    <span class="item-delete j_deleteFavoriteItem">x</span>
+                </li>
+                <%}else{%>
+                <li data-item-id="<%=FavoriteItemValue.itemId %>" 
+                    data-shop-id="<%=FavoriteItemValue.shopId %>"  
+                    data-item-price="<%=FavoriteItemValue.price %>" 
+                    data-item-isSeckilling="<%=FavoriteItemValue.isSeckilling %>" 
+                    data-item-promotionId="<%=FavoriteItemValue.promotionId %>" 
+					data-item-inventory="<%=FavoriteItemValue.inventory %>"
+					data-item-maxPurchaseCount="<%=FavoriteItemValue.maxPurchaseCount %>"					
+                    data-item-isSpecialShop="<%=FavoriteItemValue.isSpecialShop %>" 
+					data-item-promotionInventory="<%=FavoriteItemValue.promotionInventory %>"
+					>
+                    
+					<div class="figure">
+                        <a href="/item/<%=FavoriteItemValue.itemId%>">
+                            <img src="<%=favoriteProduct.imgServerUrl %><%=FavoriteItemValue.imageUrl %>" alt="">
+                        </a>
+                    </div>
+					
+                    <div class="item-main">
+						<p class="tow-line">
+                            <a href="/item/<%=FavoriteItemValue.itemId%>" title="<%=FavoriteItemValue.name %>"><%=FavoriteItemValue.name %></a>
+                        </p>
+						
+                        <p class="price-attr"><i>¥</i><%=parseFloat(FavoriteItemValue.price).toFixed(2) %></p>
+                        <!-- isVoucher=true 时表示代金券 -->
+                        <% if(FavoriteItemValue.isVoucher === false && FavoriteItemValue.itemType !== 3){%>
+                        <p><a class="tool-btn border-btn j_addToCart" href="#">加入购物车</a></p>
+                        <%}%>
+                    </div>
+                    <span class="item-delete j_deleteFavoriteItem">x</span>
+                </li>
+                <%}%>
+
+            
+        <%})%>
+
+    </ul>
+    <% if(favoriteProduct.rightBarFavoriteItemViewList.length > 5 ){%>
+    <p class="more-info"><a href="/collect/item_list.htm">查看更多收藏商品 > </a></p>
+    <%}%>
+</div>
+<%}%>

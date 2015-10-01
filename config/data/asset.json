@@ -1,0 +1,38 @@
+{
+	"currentPage": 1,
+	"totalPage": 2,
+	"couponInfoList": [{
+		"promotionId": 877,
+		"discountType": "MALL_COUPON",
+		"discountAmount": 77.00,
+		"orderAmount": 333.00,
+		"customerClaimTimes": 0,
+		"customerMaximumClaimTimes": 1,
+		"hyperlink": "/item/65361/",
+		"isNewComerCoupon": false,
+		"isShopRestrict": true,
+		"isUniqueShop": true,
+		"firstShopId": 815,
+		"firstShopUrl": "/shop/815",
+		"platformRestrict": "限在PC端等使用",
+		"willExpire": true,
+		"useTimeRange": "15.08.25-15.08.29"
+	},
+	{
+		"promotionId": 879,
+		"discountType": "MALL_COUPON",
+		"discountAmount": 78.00,
+		"orderAmount": 100.00,
+		"customerClaimTimes": 0,
+		"customerMaximumClaimTimes": 50,
+		"hyperlink": "/item/65361/",
+		"isNewComerCoupon": false,
+		"isShopRestrict": true,
+		"isUniqueShop": true,
+		"firstShopId": 815,
+		"firstShopUrl": "/shop/815",
+		"platformRestrict": "限在PC端等使用",
+		"willExpire": false,
+		"useTimeRange": "15.08.24-15.09.05"
+	}]
+}

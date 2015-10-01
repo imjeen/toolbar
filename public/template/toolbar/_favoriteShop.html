@@ -1,0 +1,30 @@
+<!-- favoriteShop -->
+<!-- 为空处理 -->
+<% if( !favoriteShop || (favoriteShop.rightBarFavoriteShopViewList).length === 0){%>
+<div class="toolbar-empty">
+    <div class="toolbar-mascot"></div>
+    <p class="empty-tip">您的收藏夹还没有收藏店铺哟！</p>
+</div>
+<%}else{%>
+<!-- 店铺 -->
+<div class="favorite-content scroll-section">
+    <ul class="favorite-list">
+        <% _.each(favoriteShop.rightBarFavoriteShopViewList,function(favoriteShopValue,favoriteShopIndex){ %>
+            <!-- 显示前5个 -->
+            <%if(favoriteShopIndex < 5){%>
+            <li data-shop-id="<%=favoriteShopValue.shopId %>">
+                <div class="figure"><img src="<%=favoriteShop.imgServerUrl %><%=favoriteShopValue.imageUrl %>" alt=""></div>
+                <div class="item-main">
+                    <h5 class="title-attr ellipsis" title="<%=favoriteShopValue.name %>"><%=favoriteShopValue.name %></h5>
+                    <p><a class="tool-btn border-btn" href="/shop/<%=favoriteShopValue.shopId %>">进入店铺</a></p>
+                </div>
+                <span class="item-delete j_deleteFavoriteShop">x</span>
+            </li>
+            <%}%>
+        <%})%>
+    </ul>
+    <% if(favoriteShop.rightBarFavoriteShopViewList.length > 5 ){%>
+    <p class="more-info" ><a href="/collect/shop_list.htm">查看更多收藏店铺 > </a></p>
+    <%}%>
+</div>
+<%}%>

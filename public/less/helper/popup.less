@@ -1,0 +1,157 @@
+
+.toolbar-popup{
+	.toolbar-popup-mask{
+		// background-color: rgba(0,0,0,0.5);
+		background: #000;
+		filter: alpha(opacity=40);
+  		opacity: 0.4;
+
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: @toolbar_z-index + 1;
+	}
+	.toolbar-popup-box{
+		font-family: "microSoft yaHei";
+		height: 215px;
+		width: 480px;
+		background-color: #fff;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-left: -240px;
+		margin-top: -110px;
+		z-index: @toolbar_z-index + 2;
+	}
+
+	//-----------------------
+	//
+	
+	.midlle-content{
+		font-size: 18px;
+		height: 215px;
+		*padding-top: 50px;
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: 130px;
+		padding-right: 30px;
+	}
+
+	.close{
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 15px;
+		text-align: center;
+		cursor: pointer;
+		width: 16px;
+		height: 16px;
+		background: url(@toolbar-sprite) no-repeat -280px -200px; 
+	}
+
+	.box-icon{
+		position: absolute;
+		top: 50%;
+		left: 50px;
+		display: inline-block;
+		height: 54px;
+		width: 54px;
+		margin-top: -27px;
+		background-image: url(@toolbar-sprite);
+		background-repeat: no-repeat;
+	}
+
+	&.toolbar-popup-success{
+		.box-icon{ background-position: -280px -250px; }
+		.box-content{
+			font-size: 14px;
+			h3{
+				color: #333333;
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+			.highlight{ color: #ff3300;}
+		}
+	}
+
+	&.toolbar-popup-fail{
+		.box-icon{ background-position: -350px -250px; }
+	}
+	
+	&.toolbar-popup-warn{
+		color: #333;
+		.box-icon{ background-position: -280px -320px; }
+		.warn-btn-group{
+			font-size: 12px;
+			margin-top: 10px;
+			.certain-btn,
+			.cancel-btn{
+				display: inline-block;
+				padding: 5px 20px;
+				margin-right: 10px;
+				border-radius: 3px;
+			}
+			.certain-btn{
+				color: #fff;
+				background-color: #dd0000;
+				border: 1px solid #dd0000;
+			}
+			.cancel-btn{
+				color: #333;
+				border: 1px solid #999;
+			}
+		}
+
+	}
+
+	.feedback-popup{
+		background-color: #f5f5f5;
+		padding: 15px;
+		height: 195px;
+		width: 690px;
+		margin-top: -150px;
+		margin-left: -345px;
+		h2{ 
+			font-size: 14px;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		textarea{
+			width: 667px;
+			height: 106px;
+			padding: 10px;
+			border: 1px solid #ffb71e;
+		}
+
+		.box-icon{ background-position: -280px -250px; }
+
+		.popup-button-group{
+			text-align: right;
+			padding: 12px 0;
+			.popup-button{
+				display: inline-block;
+				text-align: center;
+				padding: 5px 30px;
+				margin-left: 20px;
+			}
+			.cancel-button{
+				color: #333;
+				background-color: #fff;
+				border: 1px solid #999999;
+				border-radius: 3px;
+			}
+			.submit-button{
+				color: #fff;
+				background-color: #dd0000;
+				border: 1px solid #dd0000;
+				border-radius: 3px;
+			}
+		}
+
+
+
+	}
+
+}

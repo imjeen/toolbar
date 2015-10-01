@@ -1,0 +1,38 @@
+
+{{ include ./includes/header.html }}
+
+<div style="
+    height: 1500px;
+    width: 200px;
+    background-color: #ddd;
+"></div>
+<style>
+    .test{
+        position: absolute;
+        top: 50%;
+        left: 300px;
+    }
+    .test a{
+        display: inline-block;
+        padding: 10px 20px;
+        outline: 1px dashed red;
+    }
+</style>
+
+<div class="test"><a class=" fly" href="#" >click me, fly ...(test)</a></div>
+
+<div class="fly-cart"  id="flyCartTip" style="position: fixed; top: 50%;left:200px;display:block;"></div>
+
+<script>
+    $(function(){
+        // 元素以及其他一些变量
+        $('body').delegate('.fly','click',function(e){ 
+            e.preventDefault(); 
+            parabola($(this));  
+        });
+    });
+</script>
+
+{{ include ./toolbar/index.html }}
+
+{{ include ./includes/footer.html }}
