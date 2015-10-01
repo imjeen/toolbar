@@ -7,6 +7,8 @@
 服务端使用EJS模板引擎，数据存放于json文件中，这些数据有后台提供，是前后台接洽和遵循的数据接口。
 而客户端使用underscore模板引擎，脚本源文件编码遵循CommonJs规范，等同于nodejs编码风格，并通过browserify预编源代码；样式是通过LESS预编译语言编写。这里使用gulp构建工具来辅助完成一些常规的任务：预编译脚本和样式，以及文件的实时监听。
 
+注意： 伪造的json数据无任何实际意义，所以这些数据只是为了展示而用。
+
 ## env
 
 window环境下确认安装nodejs，以及包管理器bower。bower的安装:
@@ -15,11 +17,13 @@ window环境下确认安装nodejs，以及包管理器bower。bower的安装:
 
 ## init
 
+初始化可以在win系统下双击 `init.sh` 文件即可，过程之中可能出错，如 `gulp-less` 安装失败，可以再次重新安装即可。
+
 安装项目依赖的所有包(到node_modules目录中)：
 
 	npm install
 
-安装客户端依赖包(到public/script/bower_components目录中)：
+安装客户端依赖包(到public/js/bower_components目录中)：
 
 	bower install
 
