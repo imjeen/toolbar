@@ -15,11 +15,11 @@ function feedback(){
 	$popupHTML
 		.find('.j_close').bind('click',function(){ $popupHTML.remove(); })
 		.end().find('.j_submit').bind('click',function(){
-			var val = $popupHTML.find('textarea').val();
+			var val = $.trim($popupHTML.find('textarea').val());
 			var $msgTip = $('<span class="msg-tip" style="color: red"></sapn');
 			var $bottom = $(this).parent();
 			$bottom.find('.msg-tip').remove();
-			if(val.trim() == ''){
+			if(val === ''){
 				$msgTip.text('内容不能为空');
 				$bottom.prepend($msgTip);
 				return;
