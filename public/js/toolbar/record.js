@@ -10,7 +10,6 @@ var successPopup = popup.successPopup;
 var warnPopup = popup.warnPopup;
 
 var JSONP = require('./_JSONP.js').getJSONP;
-var scroll = require('./_scroll.js');
 var config = require('./_config.js');
 var login = require('./_login.js');
 var render = require('./_render.js');

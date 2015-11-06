@@ -3,6 +3,7 @@
 var _  = require('../bower_components/underscore/underscore-min.js');
 
 var JSONP = require('./_JSONP.js').getJSONP;
+var scroll = require('./_scroll.js');
 
 var popup = require('../_util/popup.js');
 var failPopup = popup.failPopup;
@@ -112,9 +113,8 @@ module.exports.loadMore = function(e){
 		$tar.removeClass('disabled').text('查看更多');
 
 		$section.before(templateHtml);
-		self.scroll($box,null);
-		var scrollTop = parseInt(oldHeight - $box.height()) + 48;
-		$box.find('.scroll-section').scrollTop(scrollTop);
+		
+		scroll($('.j_jiaToolbar'));
 		
 		if(data.totalPage === data.currentPage){
 			$section.hide();

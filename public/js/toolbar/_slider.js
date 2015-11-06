@@ -60,8 +60,7 @@ module.exports.sliderTab = function(e,config,callback){
 				
 			 };
 			var ajaxAlways = function(){
-				var $bottom = $box.find('.bottom-section');
-				scroll($box,$bottom);
+				scroll($toolbar);
 				$mask && $mask.remove();
 			};
 			

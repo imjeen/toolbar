@@ -1,5 +1,6 @@
 
 var slideHide = require('./_slider.js').slideHide;
+var scroll = require('./_scroll.js');
 
 module.exports = {
 	mountBodyClick: function(){
@@ -39,6 +40,8 @@ module.exports = {
 				$item.css({'margin-top': '100px'});
 				// $item.animate({'margin-top': '100px'},400);
 			}
+			// reset height
+			scroll($toolbar);
 		});
 
 	}

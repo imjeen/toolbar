@@ -52,8 +52,7 @@ function favoriteTab(e,$favoriteTab){
 	};
 
 	var ajaxAlways = function(){
-		var $tabBar = $tab.parent();
-		scroll($box,$tabBar);
+		scroll($('.j_jiaToolbar'));
 		$mask && $mask.remove();
 	};
 
